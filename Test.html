@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLG Coffee Practice Page</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background: #f4f1ea; }
+        .box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        button { background: #4A3728; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; }
+        button:hover { background: #634a35; }
+        input, textarea { width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        .donation-btn { background: #d9534f; }
+    </style>
+</head>
+<body>
+    <h1>☕ DLG Analytics Sandbox</h1>
+    <p>Use this page to practice GTM triggers for your non-profit goals.</p>
+
+    <div class="box">
+        <h3>Shop Action</h3>
+        <p>Product: Antigua Pastoral Coffee</p>
+        <button id="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="box">
+        <h3>Support the Mission</h3>
+        <button class="donation-btn" id="donate-now-btn">Donate $25</button>
+    </div>
+
+    <div class="box">
+        <h3>Wholesale Inquiry (B2B)</h3>
+        <form id="wholesale-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Business Email" required>
+            <textarea placeholder="Tell us about your coffee shop..."></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+    </div>
+
+    <div class="box">
+        <h3>Awareness & Social</h3>
+        <p>Visit the main site to learn about community tourism:</p>
+        <a href="https://www.dlgcoffee.org" id="main-site-link">Go to De La Gente Main Website</a>
+    </div>
+
+    <script>
+        // Simple alert to show the form "worked" without refreshing the page
+        document.getElementById('wholesale-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form Submitted! In GTM, check for the "gtm.formSubmit" event.');
+        });
+    </script>
+</body>
+</html>
